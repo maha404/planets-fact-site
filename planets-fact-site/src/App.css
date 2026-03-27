@@ -18,6 +18,21 @@
   --sky-400: #419EBB;
 }
 
+body {
+  margin: 0;
+  background-color: var(--navy-950);
+}
+
+/* Mobile */
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px;
+  color: var(--neutral-0);
+}
+
 
 .btn {
   border: none;
