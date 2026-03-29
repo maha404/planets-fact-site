@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import hamburger from '../../assets/icon-hamburger.svg';
 import chevron from '../../assets/icon-chevron.svg';
+import { Link } from 'react-router-dom';
 
 export default function MobileMenu() {
   const [data, setData] = useState([]);
@@ -33,13 +34,12 @@ export default function MobileMenu() {
         <ul>
           {data && data.length > 0 ? (
             data.map((planet: any) => (
-              <div className='menu-item-container menu-item-line'>
-              <li key={planet.name} className="menu-item">
-                <span className='circle' style={{backgroundColor: planet.color}}></span>
-                {planet.name}
-              </li>
-              <img className="chevron" src={chevron} alt="" />
-              
+              <div className='menu-item-container menu-item-line' key={planet.name}>
+                <Link to={`/${planet.name}`} className="menu-item">
+                  <span className='circle' style={{backgroundColor: planet.color}}></span>
+                  {planet.name}
+                </Link>
+                <img className="chevron" src={chevron} alt="" />
               </div>
             ))
           ) : (
