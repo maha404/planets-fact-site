@@ -51,9 +51,7 @@ ul {
   margin: 0;
 }
 
-ul > li {
-  
-}
+
 
 .chevron {
   width: 6px;
@@ -83,6 +81,12 @@ ul > li {
   font-size: 15px;
   font-weight: 700;
 }
+
+.menu-item-line:not(:last-child) {
+  border-bottom: 1px solid var(--neutral-0);
+  padding-bottom: 10px;
+}
+
 
 .btn {
   border: none;

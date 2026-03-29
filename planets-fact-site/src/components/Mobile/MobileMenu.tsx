@@ -33,7 +33,7 @@ export default function MobileMenu() {
         <ul>
           {data && data.length > 0 ? (
             data.map((planet: any) => (
-              <div className='menu-item-container'>
+              <div className='menu-item-container menu-item-line'>
               <li key={planet.name} className="menu-item">
                 <span className='circle' style={{backgroundColor: planet.color}}></span>
                 {planet.name}
