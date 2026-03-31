@@ -1,6 +1,7 @@
 import MobileMenu from "../components/Mobile/MobileMenu";
 import { useEffect, useState } from "react";
 import TabBar from "../components/Mobile/TabBar";
+import InfoCard from "../components/InfoCard";
 
 export default function Mercury() {
     const [data, setData] = useState([]);
@@ -59,6 +60,11 @@ export default function Mercury() {
                     <h2>{mercuryData?.name || "Loading..."}</h2>
                     <p>{content}</p>
                 </div>
+
+                <InfoCard title="Rotation Time" value={mercuryData?.rotation || "Loading..."} />
+                <InfoCard title="Revolution Time" value={mercuryData?.revolution || "Loading..."} />
+                <InfoCard title="Radius" value={mercuryData?.radius || "Loading..."} />
+                <InfoCard title="Average Temp" value={mercuryData?.temperature || "Loading..."} />
 
             </div>
         </>
