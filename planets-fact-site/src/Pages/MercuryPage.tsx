@@ -25,16 +25,19 @@ export default function Mercury() {
             case "overview":
                 return {
                     content: mercuryData.overview.content,
+                    source: mercuryData.overview.source,
                     images: [mercuryData.images.planet]
                 };
             case "structure":
                 return {
                     content: mercuryData.structure.content,
+                    source: mercuryData.structure.source,
                     images: [mercuryData.images.internal]
                 };
             case "surface":
                 return {
                     content: mercuryData.geology.content,
+                    source: mercuryData.geology.source,
                     images: [mercuryData.images.planet, mercuryData.images.geology]
                 };
             default:
@@ -42,7 +45,7 @@ export default function Mercury() {
         }
     };
 
-    const { content, images } = getContent();
+    const { content, source, images } = getContent();
 
     return (
         <>
@@ -59,6 +62,7 @@ export default function Mercury() {
                 <div className="planet-content">
                     <h2>{mercuryData?.name || "Loading..."}</h2>
                     <p>{content}</p>
+                    <a href={source} target="_blank">Wikipedia</a>
                 </div>
 
                 <InfoCard title="Rotation Time" value={mercuryData?.rotation || "Loading..."} />
