@@ -1,5 +1,6 @@
 import MobileMenu from "../components/Mobile/MobileMenu";
 import { useEffect, useState } from "react";
+import TabBar from "../components/Mobile/TabBar";
 
 export default function Mercury() {
     const [data, setData] = useState([]);
@@ -47,6 +48,7 @@ export default function Mercury() {
             <MobileMenu />
 
             <div className="planet-page">
+                <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />  
                 <div className="planet-image">
                     {images.map((img, index) => (
                         <img key={index} src={img} alt={`Mercury ${activeTab}`} />
@@ -58,26 +60,6 @@ export default function Mercury() {
                     <p>{content}</p>
                 </div>
 
-                <div className="planet-menu">
-                    <button 
-                        className={activeTab === "overview" ? "active" : ""} 
-                        onClick={() => setActiveTab("overview")}
-                    >
-                        Overview
-                    </button>
-                    <button 
-                        className={activeTab === "structure" ? "active" : ""} 
-                        onClick={() => setActiveTab("structure")}
-                    >
-                        Structure
-                    </button>
-                    <button 
-                        className={activeTab === "surface" ? "active" : ""} 
-                        onClick={() => setActiveTab("surface")}
-                    >
-                        Surface
-                    </button>
-                </div>
             </div>
         </>
     );
