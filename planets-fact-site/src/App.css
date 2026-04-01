@@ -98,3 +98,48 @@ ul {
   padding: 5px;
   color: var(--neutral-0);
 }
+
+.planet-page {
+  background-image: url(assets/background-stars.svg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Planet menu */
+
+.planet-menu {
+  display: flex;
+  gap: 20px;
+  padding: 24px 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.active {
+  border-bottom: 4px solid var(--sky-400) !important;
+  padding-bottom: 8px;
+}
+
+.planet-menu button {
+  background: none;
+  border: none;
+  color: var(--neutral-0);
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.planet-image img {
+  width: 111px;
+  display: flex;
+  justify-content: center;
+}
+
+.planet-image img:nth-last-of-type(-n+2):not(:nth-child(odd)) {
+  width: 82px;
+  position: relative;
+  bottom: 2rem;
+  left: 0.9rem;
+}

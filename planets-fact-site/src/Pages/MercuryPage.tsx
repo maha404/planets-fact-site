@@ -54,9 +54,11 @@ export default function Mercury() {
             <div className="planet-page">
                 <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />  
                 <div className="planet-image">
-                    {images.map((img, index) => (
-                        <img key={index} src={img} alt={`Mercury ${activeTab}`} />
-                    ))}
+                    <div className="image-container">
+                        {images.map((img, index) => (
+                            <img key={index} src={img} alt={`Mercury ${activeTab}`} />
+                        ))}
+                    </div>
                 </div>
 
                 <div className="planet-content">
