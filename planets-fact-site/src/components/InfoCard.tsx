@@ -6,8 +6,8 @@ interface props {
 export default function InfoCard(props: props) {
     return (
         <div className="info-card">
-            <p>{props.title}</p>
-            <p>{props.value}</p>
+            <p className="info-card-text">{props.title}</p>
+            <p className="info-card-value">{props.value}</p>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import MobileMenu from "../components/Mobile/MobileMenu";
 import { useEffect, useState } from "react";
 import TabBar from "../components/Mobile/TabBar";
 import InfoCard from "../components/InfoCard";
+import iconSource from '../assets/icon-source.svg';
 
 export default function Mercury() {
     const [data, setData] = useState([]);
@@ -64,14 +65,17 @@ export default function Mercury() {
                 <div className="planet-content">
                     <h2>{mercuryData?.name || "Loading..."}</h2>
                     <p>{content}</p>
-                    <a href={source} target="_blank">Wikipedia</a>
+                    <div className="link-container">
+                        <p>Source : </p><a href={source} target="_blank">Wikipedia</a> <img src={iconSource} alt="" />
+                    </div>
                 </div>
-
-                <InfoCard title="Rotation Time" value={mercuryData?.rotation || "Loading..."} />
-                <InfoCard title="Revolution Time" value={mercuryData?.revolution || "Loading..."} />
-                <InfoCard title="Radius" value={mercuryData?.radius || "Loading..."} />
-                <InfoCard title="Average Temp" value={mercuryData?.temperature || "Loading..."} />
-
+                
+                <div className="info-card-container">
+                    <InfoCard title="Rotation Time" value={mercuryData?.rotation || "Loading..."} />
+                    <InfoCard title="Revolution Time" value={mercuryData?.revolution || "Loading..."} />
+                    <InfoCard title="Radius" value={mercuryData?.radius || "Loading..."} />
+                    <InfoCard title="Average Temp" value={mercuryData?.temperature || "Loading..."} />
+                </div>
             </div>
         </>
     );
