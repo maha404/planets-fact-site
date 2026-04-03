@@ -1,6 +1,4 @@
 import './App.css'
-import Button from './components/Button'
-import MobileMenu from '../src/components/Mobile/MobileMenu'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Mercury from './Pages/MercuryPage';
 import VenusPage from './Pages/VenusPage';

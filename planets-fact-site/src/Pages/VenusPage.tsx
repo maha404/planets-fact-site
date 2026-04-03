@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import TabBar from "../components/Mobile/TabBar";
 import InfoCard from "../components/InfoCard";
 import iconSource from '../assets/icon-source.svg';
+import DesktopMenu from "../components/Mobile/DesktopMenu";
 
 export default function VenusPage() {
 
@@ -52,6 +53,8 @@ export default function VenusPage() {
     return (
         <>
             <MobileMenu />
+            <DesktopMenu />
+                       
 
             <div className="planet-page">
                 <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />  

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import TabBar from "../components/Mobile/TabBar";
 import InfoCard from "../components/InfoCard";
 import iconSource from '../assets/icon-source.svg';
+import DesktopMenu from "../components/Mobile/DesktopMenu";
+import Button from "../components/Button";
 
 export default function EeartPage() {
     const [data, setData] = useState([]);
@@ -51,7 +53,8 @@ export default function EeartPage() {
     return (
         <>
             <MobileMenu />
-
+            <DesktopMenu />
+           
             <div className="planet-page">
                 <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />  
                 <div className="planet-image">
@@ -63,10 +66,35 @@ export default function EeartPage() {
                 </div>
 
                 <div className="planet-content">
-                    <h2>{mercuryData?.name || "Loading..."}</h2>
-                    <p>{content}</p>
-                    <div className="link-container">
-                        <p>Source : </p><a href={source} target="_blank">Wikipedia</a> <img src={iconSource} alt="" />
+                    <div className="planet-text-container">
+                        <h2>{mercuryData?.name || "Loading..."}</h2>
+                        <p>{content}</p>
+                        <div className="link-container">
+                            <p>Source : </p><a href={source} target="_blank">Wikipedia</a> <img src={iconSource} alt="" />
+                        </div>
+                    </div>
+                    <div className="desktop-toggle">
+                        <Button 
+                            number="01" 
+                            text="Overview" 
+                            option="overview" 
+                            onClick={() => setActiveTab("overview")}
+                            active={activeTab === "overview"}
+                        />
+                        <Button 
+                            number="02" 
+                            text="Internal Structure" 
+                            option="structure" 
+                            onClick={() => setActiveTab("structure")}
+                            active={activeTab === "structure"}
+                        />
+                        <Button 
+                            number="03" 
+                            text="Surface Geology" 
+                            option="geology" 
+                            onClick={() => setActiveTab("surface")}
+                            active={activeTab === "surface"}
+                        />
                     </div>
                 </div>
                 

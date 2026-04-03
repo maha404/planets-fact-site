@@ -24,7 +24,27 @@ body {
   font-family: 'Antonio', sans-serif;
 }
 
+
+.desktop-toggle {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+  }
+}
+
 /* Mobile */
+
+.mobile-header-container {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
 
 .mobile-header {
   display: flex;
@@ -67,12 +87,31 @@ ul {
   padding: 24px 44px;
   margin: 0;
 
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 32px;
+  }
+
   a:link,
   a:visited {
     color: var(--neutral-0);
     text-decoration: none;
     font-size: 15px;
     letter-spacing: 2px;
+  }
+
+}
+
+.desktop-header {
+
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
   }
 
 }
@@ -129,6 +168,11 @@ ul {
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 4rem 0 4rem;
+  }
+
 }
 
 /* Planet menu */
@@ -141,6 +185,11 @@ ul {
   justify-content: center;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
 }
 
 .active {
@@ -183,6 +232,27 @@ ul {
 .planet-content {
   text-align: center;
   padding: 30px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+
+}
+
+.planet-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    text-align: left;
+    gap: 0px;
+  }
+
 }
 
 .link-container {
@@ -192,6 +262,12 @@ ul {
   gap: 5px;
   color: var(--neutral-0);
   opacity: 0.5;
+
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+
+  }
 
   a:link {
     color: var(--neutral-0);
@@ -206,6 +282,14 @@ ul {
   gap: 8px;
   width: 100%;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+  }
+
+
 }
 
 .info-card {
@@ -216,6 +300,16 @@ ul {
   padding: 5px 25px;
   border: 1px solid var(--neutral-300);
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    width: 200px;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 0 0 20px;
+    align-items: unset;
+  }
+
+
 }
 
 .info-card-text {
@@ -224,10 +318,19 @@ ul {
   font-weight: 400;
   color: var(--neutral-0);
   opacity: 0.5;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .info-card-value {
   font-size: 20px;
   font-weight: 700;
   color: var(--neutral-0);
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+  }
+
 }
