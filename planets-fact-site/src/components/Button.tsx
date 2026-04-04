@@ -8,8 +8,9 @@ interface Props {
 
 export default function Button({ number, text, option, onClick, active }: Props) {
   return (
-    <button className={`btn ${active ? 'active' : ''}`} onClick={() => onClick}>
-      {number} {text}
+    <button className={`btn ${active ? 'active' : ''}`} onClick={() => onClick && onClick(option)}>
+      <p>{number}</p>
+      <p>{text}</p>
     </button>
   );
 }

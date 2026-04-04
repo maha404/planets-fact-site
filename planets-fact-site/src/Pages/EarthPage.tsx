@@ -3,22 +3,47 @@ import { useEffect, useState } from "react";
 import TabBar from "../components/Mobile/TabBar";
 import InfoCard from "../components/InfoCard";
 import iconSource from '../assets/icon-source.svg';
-import DesktopMenu from "../components/Mobile/DesktopMenu";
+import DesktopMenu from "../components/Mobile/TabletMenu";
 import Button from "../components/Button";
 
+interface Planet {
+  name: string;
+  overview: {
+    content: string;
+    source: string;
+  };
+  structure: {
+    content: string;
+    source: string;
+  };
+  geology: {
+    content: string;
+    source: string;
+  };
+  images: {
+    planet: string;
+    internal: string;
+    geology: string;
+  };
+  rotation: string;
+  revolution: string;
+  radius: string;
+  temperature: string;
+}
+
 export default function EeartPage() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Planet[]>([]); // Define type for data
     const [activeTab, setActiveTab] = useState("overview"); // State to track active tab
 
     useEffect(() => {
         fetch('/data.json')
           .then((response) => response.json())
-          .then((data) => setData(data))
+          .then((data: Planet[]) => setData(data)) // Ensure fetched data matches type
           .catch((error) => console.error('Error fetching data:', error));
       }, []);
 
-    // Find Mercury data from the JSON
-    const mercuryData = data.find((planet: any) => planet.name === "Earth");
+    // Find Earth data from the JSON
+    const mercuryData = data.find((planet) => planet.name === "Earth");
 
     // Get the content and images based on the active tab
     const getContent = () => {
@@ -60,7 +85,7 @@ export default function EeartPage() {
                 <div className="planet-image">
                     <div className="image-container">
                         {images.map((img, index) => (
-                            <img key={index} src={img} alt={`Mercury ${activeTab}`} />
+                            <img key={index} src={img} alt={`Earth ${activeTab}`} />
                         ))}
                     </div>
                 </div>

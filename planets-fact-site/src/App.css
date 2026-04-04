@@ -152,14 +152,26 @@ ul {
 }
 
 
-.btn {
+.btn.active {
   border: none;
   background-color: var(--sky-400);
   width: 281px;
-  height: 40px;
   text-align: left;
-  padding: 5px;
   color: var(--neutral-0);
+  padding: 0px 20px;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  width: 281px;
+  text-align: left;
+  color: var(--neutral-0);
+  padding: 0px 20px;
+  display: flex;
+  gap: 1rem;
 }
 
 .planet-page {
@@ -171,6 +183,7 @@ ul {
 
   @media screen and (min-width: 768px) {
     margin: 0 4rem 0 4rem;
+    gap: 3rem;
   }
 
 }
@@ -214,12 +227,21 @@ ul {
 .planet-image {
   height: 182px;
   margin-top: 70px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+
 }
 
 .planet-image img {
   width: 111px;
   display: flex;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    width: 184px;
+  }
 }
 
 .planet-image img:nth-last-of-type(-n+2):not(:nth-child(odd)) {
@@ -227,6 +249,14 @@ ul {
   position: relative;
   bottom: 2rem;
   left: 0.9rem;
+
+  @media screen and (min-width: 768px) {
+    width: 122px;
+    bottom: 3rem;
+    left: 2rem;
+  }
+
+
 }
 
 .planet-content {
@@ -246,11 +276,18 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
     width: 50%;
     text-align: left;
     gap: 0px;
+
+    h2 {
+      font-size: 48px;
+      margin: 0;
+    }
+
   }
 
 }
