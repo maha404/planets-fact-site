@@ -82,45 +82,49 @@ export default function EeartPage() {
            
             <div className="planet-page">
                 <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />  
-                <div className="planet-image">
-                    <div className="image-container">
-                        {images.map((img, index) => (
-                            <img key={index} src={img} alt={`Earth ${activeTab}`} />
-                        ))}
-                    </div>
-                </div>
 
-                <div className="planet-content">
-                    <div className="planet-text-container">
-                        <h2>{mercuryData?.name || "Loading..."}</h2>
-                        <p>{content}</p>
-                        <div className="link-container">
-                            <p>Source : </p><a href={source} target="_blank">Wikipedia</a> <img src={iconSource} alt="" />
+                <div className="planet-page-container">
+                    <div className="planet-image">
+                        <div className="image-container">
+                            {images.map((img, index) => (
+                                <img key={index} src={img} alt={`Earth ${activeTab}`} />
+                            ))}
                         </div>
                     </div>
-                    <div className="desktop-toggle">
-                        <Button 
-                            number="01" 
-                            text="Overview" 
-                            option="overview" 
-                            onClick={() => setActiveTab("overview")}
-                            active={activeTab === "overview"}
-                        />
-                        <Button 
-                            number="02" 
-                            text="Internal Structure" 
-                            option="structure" 
-                            onClick={() => setActiveTab("structure")}
-                            active={activeTab === "structure"}
-                        />
-                        <Button 
-                            number="03" 
-                            text="Surface Geology" 
-                            option="geology" 
-                            onClick={() => setActiveTab("surface")}
-                            active={activeTab === "surface"}
-                        />
+
+                    <div className="planet-content">
+                        <div className="planet-text-container">
+                            <h2>{mercuryData?.name || "Loading..."}</h2>
+                            <p>{content}</p>
+                            <div className="link-container">
+                                <p>Source : </p><a href={source} target="_blank">Wikipedia</a> <img src={iconSource} alt="" />
+                            </div>
+                        </div>
+                        <div className="desktop-toggle">
+                            <Button 
+                                number="01" 
+                                text="Overview" 
+                                option="overview" 
+                                onClick={() => setActiveTab("overview")}
+                                active={activeTab === "overview"}
+                            />
+                            <Button 
+                                number="02" 
+                                text="Internal Structure" 
+                                option="structure" 
+                                onClick={() => setActiveTab("structure")}
+                                active={activeTab === "structure"}
+                            />
+                            <Button 
+                                number="03" 
+                                text="Surface Geology" 
+                                option="geology" 
+                                onClick={() => setActiveTab("surface")}
+                                active={activeTab === "surface"}
+                            />
+                        </div>
                     </div>
+
                 </div>
                 
                 <div className="info-card-container">

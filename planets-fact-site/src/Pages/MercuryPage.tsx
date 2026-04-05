@@ -82,6 +82,8 @@ export default function Mercury() {
            
             <div className="planet-page">
                 <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />  
+                
+                <div className="planet-page-container">
                 <div className="planet-image">
                     <div className="image-container">
                         {images.map((img, index) => (
@@ -121,6 +123,7 @@ export default function Mercury() {
                             active={activeTab === "surface"}
                         />
                     </div>
+                </div>
                 </div>
                 
                 <div className="info-card-container">
